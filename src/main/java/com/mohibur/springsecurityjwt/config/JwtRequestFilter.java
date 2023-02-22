@@ -1,6 +1,6 @@
 package com.mohibur.springsecurityjwt.config;
 
-import com.mohibur.springsecurityjwt.service.MyUserDetailsService;
+import com.mohibur.springsecurityjwt.service.UserDetailsServiceImpl;
 import com.mohibur.springsecurityjwt.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -20,7 +20,7 @@ import java.io.IOException;
 public class JwtRequestFilter extends OncePerRequestFilter {
 
     @Autowired
-    private MyUserDetailsService userDetailsService;
+    private UserDetailsServiceImpl userDetailsService;
 
     @Autowired
     private JwtUtil jwtUtil;

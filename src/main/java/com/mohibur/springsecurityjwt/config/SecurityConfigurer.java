@@ -1,6 +1,6 @@
 package com.mohibur.springsecurityjwt.config;
 
-import com.mohibur.springsecurityjwt.service.MyUserDetailsService;
+import com.mohibur.springsecurityjwt.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,7 +16,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Autowired
-    private MyUserDetailsService myUserDetailsService;
+    private UserDetailsServiceImpl userDetailsService;
 
     @Autowired
     private JwtRequestFilter jwtRequestFilter;
@@ -24,7 +24,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         System.out.println("configure(auth) of SecurityConfigurer.java called.");
-        auth.userDetailsService(myUserDetailsService);
+        auth.userDetailsService(userDetailsService);
     }
 
     @Override

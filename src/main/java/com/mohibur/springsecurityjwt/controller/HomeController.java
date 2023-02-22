@@ -2,7 +2,7 @@ package com.mohibur.springsecurityjwt.controller;
 
 import com.mohibur.springsecurityjwt.models.AuthenticationRequest;
 import com.mohibur.springsecurityjwt.models.AuthenticationResponse;
-import com.mohibur.springsecurityjwt.service.MyUserDetailsService;
+import com.mohibur.springsecurityjwt.service.UserDetailsServiceImpl;
 import com.mohibur.springsecurityjwt.util.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +22,7 @@ public class HomeController {
     private AuthenticationManager authenticationManager;
 
     @Autowired
-    private MyUserDetailsService userDetailsService;
+    private UserDetailsServiceImpl userDetailsService;
 
     @Autowired
     private JwtUtil jwtUtil;
